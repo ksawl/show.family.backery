@@ -16,6 +16,11 @@
 	margin-inline: auto;
 	max-inline-size: rem($container-max-width);
 	padding-inline: rem($main-offset);
+	max-width: rem($mediabr-bstrp-lg);
+	
+	@include media-mx($mediabr-bstrp-lg) {
+		width: 100%;
+	}
 }
 
 // Стили отзывчивых картинок (IBG) ============================================

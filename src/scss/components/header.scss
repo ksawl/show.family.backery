@@ -2,6 +2,7 @@
 @import "../config/mixins";
 
 .header {
+	background-color: var(--white-color);
 	z-index: 50;
 	inline-size: 100%;
 	transition: background-color var(--bs-transition);
@@ -9,74 +10,170 @@
 	.header-is-sticky & {
 		// ..стили для липкого хедера
 		position: fixed;
-		background-color: #007aff;
+		background-color: var(--white-color-alfa);
+		border-bottom: 1px solid var(--white-color);
+	}
+
+	&__logo {
+		background: transparent url($path-images + "/logo.png") left center no-repeat;
+		background-size: contain;
+		width: 100px;
+		height: 30px;
 	}
 
 	// .header__container
 	&__container {
-		display: flex;
 		block-size: rem($header-height);
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 		align-items: center;
 
 		.header-is-sticky & {
-			block-size: rem($header-height - 50);
+			block-size: rem($header-height-stickly);
 		}
 	}
 }
 
+.menu {
+	@include media-mx($mediabr-bstrp-lg) {
+		position: relative;
+		width: 30px;
+		height: 100%;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: row;
+		gap: 20px;
+		flex-wrap: nowrap;
+
+		@include media-mx($mediabr-bstrp-lg) {
+			position: absolute;
+			top: 15px;
+			right: 0;
+
+			.menu-open & {
+				top: 0;
+				right: - rem($main-offset);
+				width: rem($mediabr-bstrp-md - 50);
+				flex-wrap: wrap;
+				gap: 40px;
+				padding: 30px 30px 15px 15px;
+				background-color: #fff;
+        box-shadow: var(--bs-shadow);
+			}
+		}
+		@include media-mx($mediabr-bstrp-md) {
+			.menu-open & {
+				width: rem($mediabr-bstrp-sm - 50);
+			}
+		}
+		@include media-mx($mediabr-bstrp-sm) {
+			.menu-open & {
+				width: rem($mediabr-bstrp-xsm - 50);
+			}
+		}
+	}
+
+	&__link {
+		color: var(--grey);
+		font-size: 20px;
+		font-weight: 300;
+
+		&:hover {
+			color: var(--bs-font-color);
+			text-shadow: var(--hover-shadow);
+		}
+	}
+
+	&__item {
+		display: block;
+
+		@include media-mx($mediabr-bstrp-lg) {
+			display: none;
+		}
+
+		.menu-open & {
+			display: block;
+		}
+	}
+
+	&__item-burger {
+		display: none;
+
+		@include media-mx($mediabr-bstrp-lg) {
+			display: block;
+
+			.menu-open & {
+				position: absolute;
+				top: 15px;
+				right: 15px;
+			}
+		}
+	}
+}
 // Burger
 
-/*
 .icon-menu {
-  display: none;
+	display: none;
 
-  @include media-mx(768) {
-    display: block;
-    position: relative;
-    width: rem(30);
-    height: rem(18);
-    cursor: pointer;
-    z-index: 5;
+	@include media-mx($mediabr-bstrp-lg) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
 
-    span,
-    &::before,
-    &::after {
-      content: "";
-      transition: all 300ms ease 0ms;
-      right: 0;
-      position: absolute;
-      width: 100%;
-      height: rem(2);
-      background-color: #000;
-    }
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 300ms ease 0ms;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: var(--grey);
 
-    &::before {
-      top: 0;
-    }
+			&:hover {
+				text-shadow: var(--hover-shadow);
+			}
+		}
 
-    &::after {
-      bottom: 0;
-    }
+		&::before {
+			top: 0;
+		}
 
-    span {
-      top: calc(50% - rem(1));
-    }
+		&::after {
+			bottom: 0;
+		}
 
-    .menu-open & {
-      span {
-        width: 0;
-      }
+		span {
+			top: calc(50% - rem(1));
+		}
 
-      &::before {
-        top: calc(50% - rem(1));
-        transform: rotate(-45deg);
-      }
+		.menu-open & {
+			span,
+			&::before,
+			&::after {
+				background-color: var(--bs-font-color);
+			}
 
-      &::after {
-        bottom: calc(50% - rem(1));
-        transform: rotate(45deg);
-      }
-    }
-  }
+			span {
+				width: 0;
+			}
+
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
 }
-*/

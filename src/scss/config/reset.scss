@@ -39,11 +39,11 @@ html {
 		overflow: hidden;
 
 		[data-lp] {
-			padding-inline-end: var(--bh-scrollbar-width, #{rem(16)});
+			// padding-inline-end: var(--bh-scrollbar-width, #{rem(16)});
 		}
 
 		.wrapper {
-			margin-inline-end: var(--bh-scrollbar-width, #{rem(16)});
+			// margin-inline-end: var(--bh-scrollbar-width, #{rem(16)});
 		}
 	}
 }
@@ -56,6 +56,7 @@ body {
 }
 
 body {
+	background-color: var(--white-color);
 	overscroll-behavior: none;
 	line-height: var(--bs-line-height);
 	text-rendering: optimizelegibility;
