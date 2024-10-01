@@ -52,7 +52,7 @@ html,
 body {
 	inline-size: 100%;
 	block-size: 100%;
-	min-inline-size: $min-width + px;
+	min-inline-size: $page-min-width + px;
 }
 
 body {
@@ -100,6 +100,7 @@ button {
 a {
 	user-select: none;
 	text-decoration: none;
+	color: inherit;
 
 	&:hover {
 		text-decoration: none;

@@ -12,8 +12,8 @@ const images = (isBuild, serverInstance) => {
     .pipe(plugins.newer(filePaths.build.images))
     .pipe(plugins.if(isBuild, webp()))
     .pipe(plugins.if(isBuild, gulp.dest(filePaths.build.images)))
-    .pipe(plugins.if(isBuild, gulp.src(filePaths.src.images)))
-    .pipe(plugins.if(isBuild, plugins.newer(filePaths.build.images)))
+    // .pipe(plugins.if(isBuild, gulp.src(filePaths.src.images))) // Copy Source images to Dest
+    // .pipe(plugins.if(isBuild, plugins.newer(filePaths.build.images)))
     .pipe(
       plugins.if(
         isBuild,

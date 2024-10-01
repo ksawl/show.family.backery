@@ -14,7 +14,7 @@
 */
 [class*="__container"] {
 	margin-inline: auto;
-	max-inline-size: rem($max-width-container);
+	max-inline-size: rem($container-max-width);
 	padding-inline: rem($main-offset);
 }
 

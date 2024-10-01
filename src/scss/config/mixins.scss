@@ -20,8 +20,8 @@
 	// Получение значения свойства
 	$property-value: #{"clamp(" rem($min-size) "," $fly-value "," rem($start-size) ")"};
 
-	@if $width-from == $container-width and $max-width-container == 0 {
-		$width-from: $max-width;
+	@if $width-from == $container-width and $container-max-width == 0 {
+		$width-from: $page-max-width;
 	}
 
 	@if $min-size <= 0 {
@@ -37,7 +37,7 @@
 		$property-value: #{"clamp(" rem($start-size) "," $fly-value "," rem($min-size) ")"};
 	}
 
-	@if $width-from == $container-width or $width-from == $max-width or $keep-size == 1 or $keep-size == 2 {
+	@if $width-from == $container-width or $width-from == $page-max-width or $keep-size == 1 or $keep-size == 2 {
 		@media (min-width: $width-from-media) {
 			#{$property}: rem($start-size);
 		}

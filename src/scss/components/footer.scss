@@ -1,9 +1,13 @@
+//import css-variables from ../config/root
 @import "../config/functions";
 @import "../config/mixins";
 
 .footer {
 	padding-block: rem(20);
 	background: var(--black-color);
+	min-height: rem($footer-height);
+	// background: var(--primary-color);
+	background: var(--white-color) url($path-images + "/bg_footer.jpg") center center no-repeat;
 
 	// .footer__container
 	&__container {

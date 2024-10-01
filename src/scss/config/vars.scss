@@ -1,16 +1,21 @@
 // отступы безопасности для контейнера
 $main-offset: 15;
 
-// максимальная ширина страницы
-$max-width: 1920;
+$page-max-width: 1920;
+$page-min-width: 320;
 
-// минимальная ширина телефона
-$min-width: 320;
+$container-max-width: 1200;
+$container-width: $container-max-width - ($main-offset * 2);
 
-// ширина контейнера из макета
-$container-width: 1160;
-
-// ширина контейнера с учетом padding слева и справа
-$max-width-container: $container-width + ($main-offset * 2);
 $header-height: 100;
 $footer-height: 100;
+
+// Media Breackpionts
+$mediabr-bstrp-xsm: 320;
+$mediabr-bstrp-sm: 576;
+$mediabr-bstrp-md: 768;
+$mediabr-bstrp-lg: 992;
+$mediabr-bstrp-xl: 1200;
+$mediabr-bstrp-xxl: 1400;
+
+$path-images: "/images";
