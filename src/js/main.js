@@ -10,7 +10,7 @@
 // import AOS from 'aos'
 
 // Slider
-// import Swiper, { Navigation, Pagination } from 'swiper';
+// https://swiperjs.com/swiper-api
 import Swiper from 'swiper';
 import { Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
 
