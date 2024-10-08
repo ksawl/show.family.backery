@@ -1,53 +1,260 @@
 <!DOCTYPE html>
 <html lang="ru">
-  @@include('html/head.html', {
-    'title': 'Главная',
-    'description': 'Свежеиспеченный хлеб Live Demo'
-  })
-  <body>
-    <div class="wrapper">
-      @@include('html/header.html')
+	@@include('html/head.html', { 'title': 'Main Page', 'description': 'Organic Bread Live Demo' })
+	<body>
+		<div class="wrapper">
+			@@include('html/header.html')
 
-      <main class="page">
-        <div data-observ></div>
+			<main class="page">
+				<div data-observ></div>
 
-        <div class="page__container">
-          <div class="checkboxes">
-            @@include('html/checkboxes-example.html')
-          </div>
-          <br>
-          <br>
-          <br>
-          @@include('html/accordion-example.html')
-          <br>
-          <br>
-          <br>
-          @@include('html/tabs-example.html')
-          <br>
-          <img src="./images/cvccv.jpg" alt="">
-          <br>
-          <br>
+				<section class="page__section top" id="top">
+					<div class="page__container">
+						<div class="top__name">
+							<h1>Organic Bread</h1>
+							<h3>Family Bakery</h3>
+						</div>
+						<address class="top__address">
+							<div class="top__address-address">121 Rock Street, 21 Avenue, New York, NY 92103-9000</div>
+							<div class="top__address-time">We are open Monday to Saturday from 9:00 to 19:00 Sunday 10:00–18:00</div>
+							<ul class="top__address-phones">
+								<li>(234) 567-891</li>
+								<li>(345) 333-897</li>
+							</ul>
+						</address>
+					</div>
+				</section>
 
-          <button data-type="popup-1" type="button">Открыть попап</button>
-          <br>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-          <br>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-          <br>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-          <br>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-          <br>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-          <br>
-          <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-        </div>
+				<section class="page__section benefits" id="benefits">
+					<div class="page__container">
+						<h2>Delicious pastries</h2>
+						<ul class="benefits__cards">
+							<li class="benefits__cards-item">
+								<img class="benefits__cards-image" src="/images/icon-benefit_01.png" />
+								<div class="benefits__cards-text">
+									<div class="title">Baked Fresh Daily</div>
+									<div class="description">
+										Our bread is baked fresh daily, does not contain preservatives and is of very high quality. It is
+										also particularly pleasant and soft.
+									</div>
+								</div>
+							</li>
+							<li class="benefits__cards-item">
+								<img class="benefits__cards-image" src="/images/icon-benefit_02.png" />
+								<div class="benefits__cards-text">
+									<div class="title">Great importance</div>
+									<div class="description">
+										With the most competitive prices on the market, we can offer excellent quality without compromising
+										on taste.
+									</div>
+								</div>
+							</li>
+							<li class="benefits__cards-item">
+								<img class="benefits__cards-image" src="/images/icon-benefit_03.png" />
+								<div class="benefits__cards-text">
+									<div class="title">Institutions</div>
+									<div class="description">
+										We serve a wide range of institutions including universities, airlines, hotels and schools. Order
+										daily for tomorrow.
+									</div>
+								</div>
+							</li>
+							<li class="benefits__cards-item">
+								<img class="benefits__cards-image" src="/images/icon-benefit_04.png" />
+								<div class="benefits__cards-text">
+									<div class="title">Delivery to your door</div>
+									<div class="description">
+										Enjoy fresh, delicious meals delivered right to your door! Fast, reliable service with the
+										convenience you deserve. Order now and savor every bite without leaving home!
+									</div>
+								</div>
+							</li>
+							<li class="benefits__cards-item">
+								<img class="benefits__cards-image" src="/images/icon-benefit_05.png" />
+								<div class="benefits__cards-text">
+									<div class="title">No order is too big</div>
+									<div class="description">
+										No order is too big for us! Whether it's a small gathering or a large event, we handle it all with
+										ease. Quality, freshness, and satisfaction in every order, guaranteed!
+									</div>
+								</div>
+							</li>
+							<li class="benefits__cards-item">
+								<img class="benefits__cards-image" src="/images/icon-benefit_06.png" />
+								<div class="benefits__cards-text">
+									<div class="title">Delicious pastries</div>
+									<div class="description">
+										Indulge in our delicious pastries, baked fresh daily with the finest ingredients. Each bite is a
+										perfect blend of flavor and sweetness that will brighten your day!
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
 
-      </main>
+				<section class="page__section blog" id="blog">
+					<div class="page__container">
+						<h2>Fresh bread, cakes and pastries</h2>
+						<div class="description-wrap">
+							<div class="description">
+								Every day, we bake fresh bread, delightful cakes, and irresistible pastries just for you. Every bite is
+								filled with warmth, care, and flavor that brings true joy. Step in and experience the unforgettable aroma
+								and taste that will warm your heart. Freshness and quality are our top priorities!
+							</div>
+						</div>
+					</div>
+				</section>
 
-      @@include('html/footer.html')
-    </div>
+				<section class="page__section catalog" id="catalog">
+					<div class="page__container">
+						<h2>Our magnificent bread</h2>
+						<div class="cards">
+							<div class="card">
+								<img src="/images/item-baget.jpg" alt="" />
+								<div class="info">
+									<div class="title">Baguette</div>
+									<div class="text"></div>
+									<button type="button"></button>
+								</div>
+							</div>
+							<div class="card">
+								<img src="/images/item-baton.jpg" alt="" />
+								<div class="info">
+									<div class="title">A loaf of bread</div>
+									<div class="text"></div>
+									<button type="button"></button>
+								</div>
+							</div>
+							<div class="card">
+								<img src="/images/item-bely.jpg" alt="" />
+								<div class="info">
+									<div class="title">White bread</div>
+									<div class="text"></div>
+									<button type="button"></button>
+								</div>
+							</div>
+							<div class="card">
+								<img src="/images/item-celnozernovoi.jpg" alt="" />
+								<div class="info">
+									<div class="title">Whole grain bread</div>
+									<div class="text"></div>
+									<button type="button"></button>
+								</div>
+							</div>
+							<div class="card">
+								<img src="/images/item-fermersky.jpg" alt="" />
+								<div class="info">
+									<div class="title">Farmer's bread</div>
+									<div class="text"></div>
+									<button type="button"></button>
+								</div>
+							</div>
+							<div class="card">
+								<img src="/images/item-fermersky2.jpg" alt="" />
+								<div class="info">
+									<div class="title">Country bread</div>
+									<div class="text"></div>
+									<button type="button"></button>
+								</div>
+							</div>
+							<div class="card">
+								<img src="/images/item_olivkovy.jpg" alt="" />
+								<div class="info">
+									<div class="title">Olive bread</div>
+									<div class="text"></div>
+									<button type="button"></button>
+								</div>
+							</div>
+							<div class="card">
+								<img src="/images/item-zakvaska.jpg" alt="" />
+								<div class="info">
+									<div class="title">Leaven</div>
+									<div class="text"></div>
+									<button type="button"></button>
+								</div>
+							</div>
+							<div class="card">
+								<img src="/images/item-borodynsky.jpg" alt="" />
+								<div class="info">
+									<div class="title">Borodynsky</div>
+									<div class="text"></div>
+									<button type="button"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 
-    @@include('html/popup-example.html')
-  </body>
+				<section class="page__section about" id="about">
+					<div class="page__container">
+						<h2>Delicious baked goods. Exceptional quality.</h2>
+						<div class="about__content">
+							<img src="/images/section-about_01.jpg" />
+							<div class="about__text">
+								<h3>We produce delicious bread, buns and other products</h3>
+								<p>
+									We produce delicious bread, buns, and a variety of baked goods with the highest quality ingredients.
+									Each loaf and bun is crafted with care to bring you the perfect taste and texture. From warm, fresh
+									bread to soft, flavorful buns, our products are made to satisfy and brighten your every meal!
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="page__section recipes" id="recipes">
+					<div class="page__container">
+						<h2>Delicious recipes</h2>
+						<!-- Slider main container -->
+						<div class="recipes__list swiper">
+							<!-- Additional required wrapper -->
+							<div class="swiper-wrapper">
+								<!-- Slides -->
+								<div class="recipes__item swiper-slide"><img src="/images/recipes_01.jpg" alt="" srcset="" />Slide 1</div>
+								<div class="recipes__item swiper-slide"><img src="/images/recipes_02.jpg" alt="" srcset="" />Slide 2</div>
+								<div class="recipes__item swiper-slide"><img src="/images/recipes_03.jpg" alt="" srcset="" />Slide 3</div>
+								<div class="recipes__item swiper-slide"><img src="/images/recipes_04.jpg" alt="" srcset="" />Slide 4</div>
+								<div class="recipes__item swiper-slide"><img src="/images/recipes_05.jpg" alt="" srcset="" />Slide 5</div>
+							</div>
+							<!-- If we need pagination -->
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</section>
+
+				<section class="page__section revievs" id="revievs">
+					<div class="page__container">
+						<h2>They talk about us</h2>
+					</div>
+				</section>
+
+				<section class="page__section contacts" id="contacts">
+					<div class="page__container"><h2>Contact us</h2></div>
+				</section>
+			</main>
+
+			<div class="page__container">
+				<div class="checkboxes">@@include('html/checkboxes-example.html')</div>
+				<br />
+				<br />
+				<br />
+				@@include('html/accordion-example.html')
+				<br />
+				<br />
+				<br />
+				@@include('html/tabs-example.html')
+				<br />
+				<img src="./images/cvccv.jpg" alt="" />
+				<br />
+				<br />
+
+				<button data-type="popup-1" type="button">Открыть попап</button>
+			</div>
+
+			@@include('html/footer.html')
+		</div>
+
+		@@include('html/popup-example.html')
+	</body>
 </html>

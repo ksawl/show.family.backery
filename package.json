@@ -26,8 +26,8 @@
 		"js",
 		"css",
 		"scss",
-		"html", 
-    "landingpage"
+		"html",
+		"landingpage"
 	],
 	"author": "Serhii Karavashkin <serhii.karavashkin@gmail.com>",
 	"license": "MIT",
@@ -73,12 +73,12 @@
 		"prettier": "2.8.8",
 		"sass": "*1.62.1",
 		"serve": "^14.2.3",
+		"swiper": "^11.1.14",
 		"vinyl-ftp": "^0.6.1",
 		"webp-converter": "*2.2.3",
 		"webpack-stream": "^7.0.0"
 	},
 	"dependencies": {
-		"aos": "^2.3.4",
-		"swiper": "^8.4.5"
+		"aos": "^2.3.4"
 	}
 }

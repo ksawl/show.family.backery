@@ -26,6 +26,13 @@
 // @import 'libs/aos';
 // @import 'libs/swiper';
 
+// Slider
+@import "../../node_modules/swiper/swiper";
+@import "../../node_modules/swiper/swiper-vars";
+@import "../../node_modules/swiper/modules/pagination";
+@import "../../node_modules/swiper/modules/autoplay";
+@import "../../node_modules/swiper/modules/effect-coverflow";
+
 /**
 * Подключение custom scrollbar для всего сайта
 */
@@ -45,8 +52,13 @@
 * Подключение стилей отдельных блоков и секций
 */
 @import "components/header";
+@import "components/section";
 @import "components/popup";
 @import "components/checkbox";
 @import "components/tabs";
 @import "components/accordion";
 @import "components/footer";
+
+* {
+  // outline: red solid 2px;
+}

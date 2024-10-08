@@ -53,6 +53,8 @@ body {
 	inline-size: 100%;
 	block-size: 100%;
 	min-inline-size: $page-min-width + px;
+	max-height: 100vh;
+	overflow-y: clip;
 }
 
 body {

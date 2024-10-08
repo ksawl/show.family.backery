@@ -1,0 +1,382 @@
+.top {
+	background: url($path-images + "/bg_top.jpg") center center no-repeat;
+	background-size: cover;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__name {
+		position: relative;
+
+		h3 {
+			position: absolute;
+			bottom: -20px;
+			right: 40px;
+		}
+	}
+
+	&__address {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+
+		&-address {
+			position: absolute;
+			top: calc(100vh - 14vh);
+			left: rem($main-offset);
+			font-weight: 600;
+			font-size: 14px;
+			text-shadow: var(--light-shadow);
+
+			&::before {
+				content: url($path-images + "/map-marker.svg");
+				float: left;
+				width: 50px;
+				height: 50px;
+				margin-top: -15px;
+				margin-right: rem($main-offset);
+			}
+
+			@include media-mn($mediabr-bstrp-sm) {
+				top: calc(100vh - 9vh);
+				font-size: 16px;
+			}
+		}
+
+		&-time {
+			position: absolute;
+			top: calc(100vh - 7vh);
+			left: rem($main-offset + 50);
+			font-weight: 600;
+			font-size: 12px;
+			text-shadow: var(--light-shadow);
+
+			@include media-mn($mediabr-bstrp-sm) {
+				top: calc(100vh - 5vh);
+				font-size: 14px;
+			}
+
+			@include media-mn($mediabr-bstrp-md) {
+				font-size: 16px;
+			}
+		}
+
+		&-phones {
+			position: absolute;
+			top: rem(calc($header-height + $main-offset));
+			right: rem($main-offset);
+
+			& li {
+				font-size: 20px;
+				font-weight: 700;
+				line-height: 24px;
+				margin-bottom: 5px;
+				text-shadow: var(--light-shadow);
+
+				&::before {
+					content: url($path-images + "/phone.svg");
+					display: block;
+					float: left;
+					height: 24px;
+					margin-right: 10px;
+				}
+			}
+		}
+	}
+}
+
+.benefits {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__cards {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: rem($main-offset);
+
+		&-item {
+			width: 100%;
+
+			@include media-mn($mediabr-bstrp-sm) {
+				width: 45%;
+			}
+
+			@include media-mn($mediabr-bstrp-md) {
+				width: 30%;
+			}
+		}
+
+		&-image {
+			height: 60px;
+			float: left;
+			margin-right: rem($main-offset);
+		}
+
+		.title {
+			font-size: 20px;
+			font-weight: 600;
+			margin-bottom: rem($main-offset);
+		}
+	}
+}
+
+.blog {
+	background: var(--black-color) url($path-images + "/bg_section-blog.jpg") -10rem center no-repeat;
+	background-size: auto 120%;
+	display: flex;
+	flex-direction: column;
+
+	h2 {
+		color: var(--white-color);
+	}
+
+	.description-wrap {
+		display: flex;
+		flex-direction: row;
+		justify-content: end;
+	}
+
+	.description {
+		background-color: var(--black-color-alfa);
+		color: var(--white-color);
+		width: 100%;
+		line-height: 1.3;
+		padding: rem($main-offset);
+
+		@include media-mn(450) {
+			width: 70%;
+		}
+
+		@include media-mn($mediabr-bstrp-sm) {
+			width: 70%;
+		}
+
+		@include media-mn($mediabr-bstrp-md) {
+			width: 40%;
+		}
+	}
+}
+.catalog {
+	display: flex;
+	flex-direction: column;
+
+	.cards {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: start;
+		flex-wrap: wrap;
+
+		.card {
+			position: relative;
+			width: calc(100% / 2);
+
+			@include media-mn($mediabr-bstrp-sm) {
+				width: calc(100% / 3);
+			}
+
+			img {
+				width: 100%;
+				object-fit: cover;
+				aspect-ratio: 1/1;
+			}
+
+			.title {
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				font-size: 20px;
+				color: var(--black-color);
+				text-shadow: var(--hover-shadow);
+        background-color: var(--white-color-alfa);
+        padding: 5px;
+
+				@include media-mn($mediabr-bstrp-sm) {
+					font-size: 24px;
+				}
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          right: -15px;
+          background-color: #f00;
+          width: 45px;
+          height: 7px;
+        }
+			}
+
+			button {
+				position: absolute;
+				bottom: 10px;
+				right: 10px;
+				background: transparent url($path-images + "/more-circle-vertical.svg") center center no-repeat;
+				background-size: contain;
+				width: 36px;
+				height: 36px;
+			}
+		}
+	}
+}
+/* 
+Baked Fresh Daily
+Great importance
+Institutions
+Delivery to your door
+No order is too big
+Delicious pastries
+
+Baguette
+A loaf of bread
+White bread
+Whole grain bread
+Farmer's bread
+Country bread
+Olive bread
+Leaven
+*/
+
+.about {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		z-index: -5;
+		background-color: #fff;
+		width: 100%;
+		height: 50%;
+	}
+
+	&__content {
+		position: relative;
+		padding-top: 40vw;
+
+		@include media-mn($mediabr-bstrp-sm) {
+			padding-top: 40vw;
+		}
+
+		@include media-mn($mediabr-bstrp-md) {
+			padding-top: 300px;
+		}
+
+		img {
+			position: absolute;
+			top: 0px;
+			right: 0;
+			z-index: -1;
+			width: 90%;
+
+			@include media-mn($mediabr-bstrp-sm) {
+				width: 60%;
+			}
+
+			@include media-mn($mediabr-bstrp-md) {
+				top: -50px;
+				width: 50%;
+			}
+		}
+	}
+
+	&__text {
+		position: relative;
+		background-color: var(--white-color-alfa);
+		width: 90%;
+		padding: 15px 15px 15px 0;
+		text-shadow: var(--light-shadow);
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: -50vw;
+			background-color: var(--white-color-alfa);
+			width: 50vw;
+			height: 100%;
+		}
+
+		@include media-mn($mediabr-bstrp-sm) {
+			width: 60%;
+		}
+
+		h3 {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.recipes {
+	display: flex;
+  flex-direction: column;
+	justify-content: start;
+	align-items: center;
+	background: var(--black-color) url($path-images + "/bg_section-menu.jpg") center center no-repeat;
+	background-size: cover;
+
+	h2 {
+		color: var(--white-color);
+	}
+
+  &__list {
+    width: 100%;
+    padding-top: 5px;
+  }
+
+  &__item {
+    background-color: var(--white-color-alfa);
+    padding: rem($main-offset);
+    width: 50%;
+    margin-bottom: 50px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  --swiper-pagination-color: #fab44b;
+  --swiper-pagination-bullet-inactive-color: #fab44b;
+  --swiper-pagination-bullet-size: 15px;
+  --swiper-pagination-bullet-width: 15px;
+  --swiper-pagination-bullet-height: 15px;
+  --swiper-pagination-bullet-opacity: 0.8;
+  --swiper-pagination-bullet-horizontal-gap: 8px;
+
+  .swiper-pagination {
+    span {
+      border: 2px solid var(--black-color);
+    }
+  }
+}
+
+.revievs {
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	background: var(--white-color) url($path-images + "/bg_section-breakfast.jpg") center center no-repeat;
+	background-size: cover;
+
+	h2 {
+		text-shadow: var(--light-shadow);
+	}
+}
+.contacts {
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	background: var(--black-color) url($path-images + "/bg_footer.jpg") center center no-repeat;
+	background-size: cover;
+
+  h2 {
+    color: var(--white-color);
+  }
+}

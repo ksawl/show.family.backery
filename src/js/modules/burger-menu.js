@@ -13,7 +13,7 @@ export class BurgerMenu extends Popup {
 	init() {
 		if (this.burgerButton) {
 			document.addEventListener('click', ({ target }) => {
-				if (target.closest('.icon-menu')) {
+				if (target.closest('.icon-menu') || target.closest('.menu__link')) {
 					this.html.classList.toggle('menu-open');
 					this.toggleBodyLock(this.isMenuOpen);
 				}

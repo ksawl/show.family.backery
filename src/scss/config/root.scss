@@ -19,9 +19,12 @@
 	--primary-hover-color: #2d2d2d;
 	--secondary-color: #ff4040;
 	--white-color: rgb(246, 246, 248);
-	--white-color-alfa: rgba(246, 246, 246, 0.7);
+	--white-color-alfa: rgba(234, 234, 234, 0.8);
 	--grey: rgb(187, 187, 187);
-	--black-color: #131313;
+	--grey-dark: rgb(78, 78, 78);
+	--black-color: #030102;
+	--black-color-alfa: rgba(003, 001, 002, 0.5);
 	--bs-shadow: 0px 2px 3px #{rgba(#000, 10%)}, 0px 8px 3px #{rgba(#000, 10%)};
 	--hover-shadow: 3px 5px 5px #{rgba(#000, 0.4)}, 5px -5px 10px #{rgba(#000, 0.4)}, -3px -5px 15px #{rgba(#000, 0.4)};
+	--light-shadow: 3px 3px 3px #{rgba(#fff, 0.4)}, 3px -3px 3px #{rgba(#fff, 0.4)}, -3px -3px 3px #{rgba(#fff, 0.4)};
 }

@@ -95,6 +95,19 @@
 	}
 }
 
+@mixin active-hover() {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+	@media (hover: none) {
+		&:active {
+			@content;
+		}
+	}
+}
+
 // !:not (last-child)
 @mixin not-last() {
 	&:not(:last-child) {

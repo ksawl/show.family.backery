@@ -8,13 +8,18 @@
  */
 // import { MousePRLX } from './libs/parallaxMouse'
 // import AOS from 'aos'
+
+// Slider
 // import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper from 'swiper';
+import { Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
 
 import { BaseHelpers } from './helpers/base-helpers';
 import { PopupManager } from './modules/popup-manager';
 import { BurgerMenu } from './modules/burger-menu';
 import { Tabs } from './modules/tabs';
 import { Accordion } from './modules/accordion';
+import { EventScroll } from './modules/scroll';
 
 BaseHelpers.checkWebpSupport();
 
@@ -24,7 +29,8 @@ BaseHelpers.addTouchClass();
 
 BaseHelpers.addLoadedClass();
 
-BaseHelpers.headerFixed();
+// Прилипание хедера при прокрутке
+// BaseHelpers.headerFixed();
 
 /**
  * Открытие/закрытие модальных окон
@@ -63,4 +69,52 @@ new Accordion('.accordion', {
 	shouldOpenAll: false, // true
 	defaultOpen: [], // [0,1]
 	collapsedClass: 'open',
+});
+
+/* Активное меню при скроле */
+new EventScroll().menuActive();
+
+// Slider
+const swiper = new Swiper('.swiper', {
+	modules: [Pagination, Autoplay, EffectCoverflow],
+
+  // Optional parameters
+  direction: 'horizontal',
+	speed: 400,
+  spaceBetween: -35,
+  loop: true,
+	// centeredSlides: true,
+	watchSlidesProgress: true,
+
+	breakpoints: {
+		320: {
+			slidesPerView: 1,
+		},
+		576: {
+			slidesPerView: 2,
+		},
+		768: {
+			slidesPerView: 3,
+		},
+	},
+
+	autoplay: {
+		pauseOnMouseEnter: true,
+	},
+	
+	effect: 'coverflow',
+	coverflowEffect: {
+		rotate: 20,
+		slideShadows: false,
+		modifier: 3,
+		depth: 50,
+	},
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+		clickable: true,
+		dynamicBullets: true,
+  },
+
 });

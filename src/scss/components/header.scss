@@ -2,17 +2,20 @@
 @import "../config/mixins";
 
 .header {
-	background-color: var(--white-color);
+	background-color: var(--white-color-alfa);
+	position: fixed;
 	z-index: 50;
 	inline-size: 100%;
 	transition: background-color var(--bs-transition);
+	border-bottom: 1px solid var(--white-color);
 
+	/*
 	.header-is-sticky & {
 		// ..стили для липкого хедера
 		position: fixed;
 		background-color: var(--white-color-alfa);
 		border-bottom: 1px solid var(--white-color);
-	}
+	}*/
 
 	&__logo {
 		background: transparent url($path-images + "/logo.png") left center no-repeat;
@@ -23,75 +26,74 @@
 
 	// .header__container
 	&__container {
+		position: relative;
+		z-index: 2;
 		block-size: rem($header-height);
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
 
+		/*
 		.header-is-sticky & {
 			block-size: rem($header-height-stickly);
-		}
+		}*/
 	}
 }
 
 .menu {
-	@include media-mx($mediabr-bstrp-lg) {
+	position: fixed;
+	top: -100vh;
+	right: 0;
+	width: 100%;
+	height: calc(100vh - rem($header-height));
+	background-color: #fff;
+	transition: all 300ms ease 0ms;
+	padding: 15px;
+	overflow: auto;
+
+	.menu-open & {
+		top: rem($header-height);
+	}
+
+	@include media-mn($mediabr-bstrp-sm) {
+		width: 50%;
+	}
+
+	@include media-mn($mediabr-bstrp-md) {
+		width: 30%;
+	}
+
+	@include media-mn($mediabr-bstrp-lg) {
 		position: relative;
-		width: 30px;
-		height: 100%;
+		top: 0;
+		width: auto;
+		height: auto;
+		background-color: transparent;
+		padding: 0;
+
+		.menu-open & {
+			top: 0;
+		}
 	}
 
 	&__list {
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		gap: 20px;
 		flex-wrap: nowrap;
 
-		@include media-mx($mediabr-bstrp-lg) {
-			position: absolute;
-			top: 15px;
-			right: 0;
-
-			.menu-open & {
-				top: 0;
-				right: - rem($main-offset);
-				width: rem($mediabr-bstrp-md - 50);
-				flex-wrap: wrap;
-				gap: 40px;
-				padding: 30px 30px 15px 15px;
-				background-color: #fff;
-        box-shadow: var(--bs-shadow);
-			}
-		}
-		@include media-mx($mediabr-bstrp-md) {
-			.menu-open & {
-				width: rem($mediabr-bstrp-sm - 50);
-			}
-		}
-		@include media-mx($mediabr-bstrp-sm) {
-			.menu-open & {
-				width: rem($mediabr-bstrp-xsm - 50);
-			}
-		}
-	}
-
-	&__link {
-		color: var(--grey);
-		font-size: 20px;
-		font-weight: 300;
-
-		&:hover {
-			color: var(--bs-font-color);
-			text-shadow: var(--hover-shadow);
+		@include media-mn($mediabr-bstrp-lg) {
+			flex-direction: row;
 		}
 	}
 
 	&__item {
-		display: block;
+		display: none;
+		min-height: 24px;
 
-		@include media-mx($mediabr-bstrp-lg) {
-			display: none;
+		@include media-mn($mediabr-bstrp-lg) {
+			display: block;
 		}
 
 		.menu-open & {
@@ -99,81 +101,84 @@
 		}
 	}
 
-	&__item-burger {
-		display: none;
+	&__link {
+		color: var(--grey-dark);
+		font-size: 20px;
+		font-weight: 300;
+		line-height: 24px;
+		text-shadow: var(--light-shadow);
 
-		@include media-mx($mediabr-bstrp-lg) {
-			display: block;
+		@include active-hover() {
+			color: var(--bs-font-color);
+			text-shadow: var(--hover-shadow);
+		}
 
-			.menu-open & {
-				position: absolute;
-				top: 15px;
-				right: 15px;
-			}
+		&.active {
+			text-shadow: var(--hover-shadow);
 		}
 	}
 }
 // Burger
 
 .icon-menu {
-	display: none;
+	display: block;
+	position: relative;
+	width: rem(30);
+	height: rem(18);
+	cursor: pointer;
+	z-index: 5;
 
-	@include media-mx($mediabr-bstrp-lg) {
-		display: block;
-		position: relative;
-		width: rem(30);
-		height: rem(18);
-		cursor: pointer;
-		z-index: 5;
+	@include media-mn($mediabr-bstrp-lg) {
+		display: none;
+	}
 
+	span,
+	&::before,
+	&::after {
+		content: "";
+		transition: all 300ms ease 0ms;
+		right: 0;
+		position: absolute;
+		width: 100%;
+		height: rem(2);
+		background-color: var(--grey-dark);
+
+		&:hover {
+			text-shadow: var(--hover-shadow);
+		}
+	}
+
+	&::before {
+		top: 0;
+	}
+
+	&::after {
+		bottom: 0;
+	}
+
+	span {
+		top: calc(50% - rem(1));
+	}
+
+	.menu-open & {
 		span,
 		&::before,
 		&::after {
-			content: "";
-			transition: all 300ms ease 0ms;
-			right: 0;
-			position: absolute;
-			width: 100%;
-			height: rem(2);
-			background-color: var(--grey);
-
-			&:hover {
-				text-shadow: var(--hover-shadow);
-			}
-		}
-
-		&::before {
-			top: 0;
-		}
-
-		&::after {
-			bottom: 0;
+			background-color: var(--bs-font-color);
 		}
 
 		span {
-			top: calc(50% - rem(1));
+			width: 0;
 		}
 
-		.menu-open & {
-			span,
-			&::before,
-			&::after {
-				background-color: var(--bs-font-color);
-			}
+		&::before {
+			top: calc(50% - rem(1));
+			transform: rotate(-45deg);
+		}
 
-			span {
-				width: 0;
-			}
-
-			&::before {
-				top: calc(50% - rem(1));
-				transform: rotate(-45deg);
-			}
-
-			&::after {
-				bottom: calc(50% - rem(1));
-				transform: rotate(45deg);
-			}
+		&::after {
+			bottom: calc(50% - rem(1));
+			transform: rotate(45deg);
 		}
 	}
 }
